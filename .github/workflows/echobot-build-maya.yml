@@ -1,4 +1,4 @@
-name: .NET BOT D1 BUILD wasem
+name: .NET BOT D1 BUILD maya
 
 on:
   push:
@@ -6,14 +6,14 @@ on:
       - 'dev'
     paths:
       - './Samples/PublicSamples/EchoBot/src/**'
-      - .github/workflows/echobot-build-wasem.yml
+      - .github/workflows/echobot-build-maya.yml
 
   pull_request:
     branches:
       - 'dev'
     paths:
       - './Samples/PublicSamples/EchoBot/src/**'
-      - .github/workflows/echobot-build-wasem.yml
+      - .github/workflows/echobot-build-maya.yml
 
   workflow_dispatch:
 
@@ -23,7 +23,7 @@ env:
   Component:   EchoBot
   BuildName:   0.1.${{ github.run_number }}
   Environment: D1
-  OrgName:     wasem
+  OrgName:     maya
   Location:    centralus
 
 jobs:
@@ -63,7 +63,7 @@ jobs:
     - name: Login via Az module
       uses: azure/login@v2
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS_wasem_BOT }}
+        creds: ${{ secrets.AZURE_CREDENTIALS_maya_BOT }}
         enable-AzPSSession: true
 
     - name: G1_RG_UploadArtifacts_to_Blob
